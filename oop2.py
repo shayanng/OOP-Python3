@@ -40,7 +40,8 @@ first, last, pay = emp_str_1.split("-")
 
 new_emp_1 = Employee(first, last, pay)
 
-
+print(new_emp_1.email)
+print(new_emp_1.pay)
 #print(emp_1)
 #print(emp_2)
 
@@ -59,11 +60,12 @@ new_emp_1 = Employee(first, last, pay)
 
 #print(emp_1.__dict__)
 
-Employee.set_raise_amount(1.045)
+#Employee.set_raise_amount(1.045)
 
-print(Employee.raise_amount)
-print(emp_1.raise_amount)
-print(emp_2.raise_amount)
+#print(Employee.raise_amount)
+#print(emp_1.raise_amount)
+#print(emp_2.raise_amount)
 
-print(Employee.num_of_emps)
+#print(Employee.num_of_emps)
 
+  
