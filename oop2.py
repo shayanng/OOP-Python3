@@ -22,12 +22,23 @@ class Employee:
     def set_raise_amount(cls, amount):
         cls.raise_amount = amount
 
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split("-")
+        cls(first, last, pay)
+
+        
+
 emp_1 = Employee("Sam", "Morin", 50_000)
 emp_2 = Employee("Helen", "Shiri", 60_000)
 
 emp_str_1 = "John-Dow-70000"
 emp_str_2 = "Jenn-Williams-70000"
 emp_str_3 = "Zara-Sasha-70000"
+
+first, last, pay = emp_str_1.split("-")
+
+new_emp_1 = Employee(first, last, pay)
 
 
 #print(emp_1)
