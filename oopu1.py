@@ -87,19 +87,90 @@ i.increment_val()
 
 # %%  the __init__ constructor
 class MyNum(object):
-    def __init__(self):
+    def __init__(self, value):
         print("Calling __init__")
-        self.val = 0
+        self.val = value
         
     def increment(self):
         self.val = self.val + 1
 
-        
-        
-        
-        
+dd = MyNum(5)
+dd.increment()
+dd.increment()
+print(dd.val)
 
+#%% the __init__ constructor + try, except
+class MyNum(object):
+    def __init__(self, value):
+        try:
+            value = int(value)
+        except ValueError:
+            value = 0
+        self.val = value
         
+    def increment(self):
+        self.val = self.val + 1
+        
+aa = MyNum("hello")
+dd = MyNum(5)
+dd.increment()
+dd.increment()
+print(dd.val)
+print(aa.val)
+
+#%% Class Atributes 1
+class YourClass(object):
+    classy = 10
+    
+    def set_val(self):
+        self.insty = 100
+        
+dd = YourClass()
+
+dd.set_val()
+print(dd.classy)
+print(dd.insty)
+
+#%% Class Atributes 2        
+class YourClass(object):
+    classy = "class value!"
+    
+dd = YourClass()
+
+print(dd.classy)
+
+dd.classy = "inst value!"
+
+print(dd.classy)
+
+del dd.classy
+
+print(dd.classy)
+    
+#%% class and instance data
+class InstanceCounter(object):
+    count = 0
+    
+    def __init__(self, val):
+        self.val = val
+        InstanceCounter.count += 1
+        
+    def set_val(self, newval):
+        self.val = newval
+        
+    def get_val(self):
+        return self.val
+    
+    def get_count(self):
+        return InstanceCounter.count
+    
+a = InstanceCounter(5)
+b = InstanceCounter(13)
+c = InstanceCounter(17)
+
+for obj in (a, b, c):
+    print("val of obj: %s" % (obj.get_val()))
+    print("count: %s" % (obj.get_count()))    
         
         
         
